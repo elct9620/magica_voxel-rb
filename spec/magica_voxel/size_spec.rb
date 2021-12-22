@@ -20,4 +20,10 @@ RSpec.describe MagicaVoxel::Size do
 
     it { is_expected.to eq(3) }
   end
+
+  describe '#inspect' do
+    subject { size.inspect }
+
+    it { is_expected.to match(/x=\d+, y=\d+, z=\d+/) }
+  end
 end
