@@ -46,7 +46,8 @@ module MagicaVoxel
     #
     # @since 0.1.0
     TYPES = {
-      'MAIN' => 'Main'
+      'MAIN' => 'Main',
+      'SIZE' => 'Size'
     }.freeze
 
     # @param content [String] content data

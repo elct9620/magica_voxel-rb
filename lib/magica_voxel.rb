@@ -3,6 +3,7 @@
 require_relative 'magica_voxel/version'
 require_relative 'magica_voxel/chunk'
 require_relative 'magica_voxel/main'
+require_relative 'magica_voxel/size'
 require_relative 'magica_voxel/file'
 
 # The MagicaVoxel file parser
