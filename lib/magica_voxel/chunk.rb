@@ -42,6 +42,8 @@ module MagicaVoxel
       end
     end
 
+    include Enumerable
+
     # Chunk Type Mapping
     #
     # @since 0.1.0
@@ -66,6 +68,15 @@ module MagicaVoxel
     # @since 0.1.0
     def children
       @children ||= Chunk.read(@_children)
+    end
+
+    # :nodoc:
+    #
+    # @since 0.1.0
+    def each(&block)
+      return enum_for(:each) unless defined?(yield)
+
+      children.each(&block)
     end
   end
 end
