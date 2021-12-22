@@ -23,6 +23,14 @@ RSpec.describe MagicaVoxel::File do
     it { is_expected.to eq(150) }
   end
 
+  describe '#root' do
+    subject { file.root }
+
+    let(:binary) { "VOX \x96\x00\x00\x00MAIN\x00\x00\x00\x00\x00\x00\x00\x00" }
+
+    it { is_expected.to be_a(MagicaVoxel::Main) }
+  end
+
   describe '#valid?' do
     it { is_expected.to be_valid }
 

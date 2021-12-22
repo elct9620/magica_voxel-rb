@@ -29,6 +29,13 @@ module MagicaVoxel
       @version ||= binary[4, 4].unpack1('L')
     end
 
+    # @return [MagicaVoxel::Main] main chunk
+    #
+    # @since 0.1.0
+    def root
+      @root ||= Chunk.read(binary[8..-1]).first
+    end
+
     # @return [TrueClass|FalseClass] is valid MagicaVoxel file
     #
     # @since 0.1.0
