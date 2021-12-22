@@ -15,6 +15,27 @@ module MagicaVoxel
       @path = path
     end
 
+    # @return [String] format
+    #
+    # @since 0.1.0
+    def format
+      binary[0, 4].strip
+    end
+
+    # @return [Number] version
+    #
+    # @since 0.1.0
+    def version
+      @version ||= binary[4, 4].unpack1('L')
+    end
+
+    # @return [TrueClass|FalseClass] is valid MagicaVoxel file
+    #
+    # @since 0.1.0
+    def valid?
+      format == 'VOX'
+    end
+
     # @return [String] binary
     #
     # @since 0.1.0
