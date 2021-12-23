@@ -3,12 +3,12 @@
 RSpec.describe MagicaVoxel::File do
   subject(:file) { described_class.new('path/model.vox') }
 
-  let(:binary) { "VOX \x96\x00\x00\x00" }
+  let(:io) { StringIO.new("VOX \x96\x00\x00\x00") }
 
   before do
-    allow(File).to receive(:read)
+    allow(File).to receive(:open)
       .with('path/model.vox', mode: 'rb')
-      .and_return(binary)
+      .and_yield(io)
   end
 
   describe '#format' do
@@ -26,7 +26,7 @@ RSpec.describe MagicaVoxel::File do
   describe '#root' do
     subject { file.root }
 
-    let(:binary) { "VOX \x96\x00\x00\x00MAIN\x00\x00\x00\x00\x00\x00\x00\x00" }
+    let(:io) { StringIO.new("VOX \x96\x00\x00\x00MAIN\x00\x00\x00\x00\x00\x00\x00\x00") }
 
     it { is_expected.to be_a(MagicaVoxel::Main) }
   end
@@ -34,8 +34,8 @@ RSpec.describe MagicaVoxel::File do
   describe '#valid?' do
     it { is_expected.to be_valid }
 
-    context 'when binary invalid' do
-      let(:binary) { "OBJ \x96\x00\x00\x00" }
+    context 'when format invalid' do
+      let(:io) { StringIO.new("OBJ \x96\x00\x00\x00") }
 
       it { is_expected.not_to be_valid }
     end

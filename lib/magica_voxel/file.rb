@@ -8,34 +8,18 @@ module MagicaVoxel
   # @since 0.1.0
   class File
     # @since 0.1.0
-    attr_reader :path
+    attr_reader :path, :format, :version, :root
 
     # @param path [String] the .vox file path
     #
     # @since 0.1.0
     def initialize(path)
       @path = path
-    end
-
-    # @return [String] format
-    #
-    # @since 0.1.0
-    def format
-      binary[0, 4].strip
-    end
-
-    # @return [Number] version
-    #
-    # @since 0.1.0
-    def version
-      @version ||= binary[4, 4].unpack1('L')
-    end
-
-    # @return [MagicaVoxel::Main] main chunk
-    #
-    # @since 0.1.0
-    def root
-      @root ||= Chunk.read(StringIO.new(binary[8..-1])).first
+      ::File.open(@path, mode: 'rb') do |io|
+        @format = io.read(4).strip
+        @version = io.read(4).unpack1('L')
+        @root = Chunk.read(io).first
+      end
     end
 
     # @return [TrueClass|FalseClass] is valid MagicaVoxel file
@@ -43,13 +27,6 @@ module MagicaVoxel
     # @since 0.1.0
     def valid?
       format == 'VOX'
-    end
-
-    # @return [String] binary
-    #
-    # @since 0.1.0
-    def binary
-      @binary ||= ::File.read(@path, mode: 'rb')
     end
   end
 end
