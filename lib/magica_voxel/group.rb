@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 module MagicaVoxel
-  # The Chunk type nTRN
+  # The Chunk type nGRP
   #
   # @since 0.1.0
-  class Transform < Node
+  class Group < Node
     # @since 0.1.0
-    attr_reader :child_id, :reserved_id, :layer_id, :frames
+    attr_reader :child_ids
 
     # :nodoc:
     #
     # @since 0.1.0
     def inspect
-      "#<MagicaVoxel::Transform node_id=#{node_id}, name=#{name}, hidden=#{hidden?}>"
+      "#<MagicaVoxel::Group node_id=#{node_id}, name=#{name}, hidden=#{hidden?}>"
     end
 
     private
@@ -24,10 +24,7 @@ module MagicaVoxel
       {
         node_id: :int32,
         attributes: :dict,
-        child_id: :int32,
-        reserved_id: :int32,
-        layer_id: :int32,
-        frames: :frames
+        child_ids: :int32_array
       }
     end
   end

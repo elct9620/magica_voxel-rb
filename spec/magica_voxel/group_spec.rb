@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe MagicaVoxel::Transform do
-  subject(:transform) { described_class.new(content, '') }
+RSpec.describe MagicaVoxel::Group do
+  subject(:group) { described_class.new(content, '') }
 
   let(:content) do
     "\x00\x00\x00\x00" \
@@ -11,26 +11,17 @@ RSpec.describe MagicaVoxel::Transform do
       "\x07\x00\x00\x00_hidden" \
       "\x01\x00\x00\x000" \
       "\x01\x00\x00\x00" \
-      "\x00\x00\x00\x00" \
-      "\x00\x00\x00\x00" \
-      "\x01\x00\x00\x00" \
-      "\x03\x00\x00\x00" \
-      "\x02\x00\x00\x00_r" \
-      "\x01\x00\x00\x000" \
-      "\x02\x00\x00\x00_t" \
-      "\x01\x00\x00\x000" \
-      "\x02\x00\x00\x00_f" \
-      "\x01\x00\x00\x000" \
+      "\x02\x00\x00\x00"
   end
 
   describe '#node_id' do
-    subject { transform.node_id }
+    subject { group.node_id }
 
     it { is_expected.to eq(0) }
   end
 
   describe '#name' do
-    subject { transform.name }
+    subject { group.name }
 
     it { is_expected.to eq('chr') }
   end
@@ -39,8 +30,14 @@ RSpec.describe MagicaVoxel::Transform do
     it { is_expected.not_to be_hidden }
   end
 
+  describe '#child_ids' do
+    subject { group.child_ids }
+
+    it { is_expected.to include(2) }
+  end
+
   describe '#inspect' do
-    subject { transform.inspect }
+    subject { group.inspect }
 
     it { is_expected.to match(/node_id=0/) }
     it { is_expected.to match(/name=chr/) }

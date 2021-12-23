@@ -51,6 +51,15 @@ module MagicaVoxel
       Hash[*Array.new(int32 * 2).map { string }]
     end
 
+    # Read Int32 Array
+    #
+    # @return [Array<Number>]
+    #
+    # @since 0.1.0
+    def int32_array
+      Array.new(int32).map { int32 }
+    end
+
     # Read Frames
     #
     # @return [Array<MagicaVoxel::Frame>]

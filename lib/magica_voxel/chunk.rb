@@ -51,7 +51,8 @@ module MagicaVoxel
       'SIZE' => 'Size',
       'XYZI' => 'Model',
       'RGBA' => 'Pattle',
-      'nTRN' => 'Transform'
+      'nTRN' => 'Transform',
+      'nGRP' => 'Group'
     }.freeze
 
     # @param content [String] content data
