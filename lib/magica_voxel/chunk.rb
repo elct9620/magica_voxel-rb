@@ -49,7 +49,7 @@ module MagicaVoxel
     TYPES = {
       'MAIN' => 'Main',
       'SIZE' => 'Size',
-      'XYZI' => 'XYZI',
+      'XYZI' => 'Model',
       'RGBA' => 'Pattle'
     }.freeze
 

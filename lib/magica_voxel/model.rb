@@ -4,7 +4,7 @@ module MagicaVoxel
   # The Chunk type XYZI
   #
   # @since 0.1.0
-  class XYZI < Chunk
+  class Model < Chunk
     # @since 0.1.0
     attr_reader :voxels
 
@@ -12,7 +12,7 @@ module MagicaVoxel
     #
     # @return 0.1.0
     def inspect
-      "#<MagicaVoxel::XYZI size=#{voxels.size}>"
+      "#<MagicaVoxel::Model size=#{voxels.size}>"
     end
 
     private

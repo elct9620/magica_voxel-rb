@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe MagicaVoxel::XYZI do
+RSpec.describe MagicaVoxel::Model do
   subject(:xyzi) { described_class.new("\x01\x00\x00\x00\x01\x02\x03\x01", '') }
 
   describe '#voxels' do

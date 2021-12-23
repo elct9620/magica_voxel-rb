@@ -18,6 +18,6 @@ RSpec.describe MagicaVoxel::Pattle do
   describe '#inspect' do
     subject { rgba.inspect }
 
-    it { is_expected.to eq('#<MagicaVoxel::Color>') }
+    it { is_expected.to eq('#<MagicaVoxel::Pattle>') }
   end
 end

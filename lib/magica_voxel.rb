@@ -5,7 +5,7 @@ require_relative 'magica_voxel/reader'
 require_relative 'magica_voxel/chunk'
 require_relative 'magica_voxel/main'
 require_relative 'magica_voxel/size'
-require_relative 'magica_voxel/xyzi'
+require_relative 'magica_voxel/model'
 require_relative 'magica_voxel/pattle'
 require_relative 'magica_voxel/file'
 

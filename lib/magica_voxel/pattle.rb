@@ -23,7 +23,7 @@ module MagicaVoxel
     #
     # @since 0.1.0
     def inspect
-      '#<MagicaVoxel::Color>'
+      '#<MagicaVoxel::Pattle>'
     end
 
     private
