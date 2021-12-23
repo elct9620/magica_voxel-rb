@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'stringio'
+
 module MagicaVoxel
   # The MagicaVoxel file
   #
@@ -33,7 +35,7 @@ module MagicaVoxel
     #
     # @since 0.1.0
     def root
-      @root ||= Chunk.read(binary[8..-1]).first
+      @root ||= Chunk.read(StringIO.new(binary[8..-1])).first
     end
 
     # @return [TrueClass|FalseClass] is valid MagicaVoxel file
