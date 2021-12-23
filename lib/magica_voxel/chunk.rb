@@ -53,6 +53,7 @@ module MagicaVoxel
       'RGBA' => 'Pattle',
       'nTRN' => 'Transform',
       'nGRP' => 'Group',
+      'nSHP' => 'Shape',
       'MATL' => 'Material',
       'LAYR' => 'Layer',
       'rOBJ' => 'Object',

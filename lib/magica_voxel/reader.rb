@@ -124,5 +124,14 @@ module MagicaVoxel
       x, y, z, i = @io.read.unpack('cccC')
       Voxel.new(x, y, z, i)
     end
+
+    # Read Shape's Model
+    #
+    # @return [MagicaVoxel::Shape::Model]
+    #
+    # @since 0.1.0
+    def shape_model
+      Array.new(int32).map { Shape::Model.new(int32, dict) }
+    end
   end
 end
