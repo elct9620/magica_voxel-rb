@@ -7,6 +7,15 @@ module MagicaVoxel
   #
   # @since 0.1.0
   class File
+    # @!attribute [r] path
+    #   @return [String] the .vox path
+    # @!attribute [r] format
+    #   @return [String] file format, should be 'VOX'
+    # @!attribute [r] version
+    #   @return [Number] the VOX version, current is 150
+    # @!attribute [r] root
+    #   @return [MagicaVoxel::Main] the 'MAIN' chunk
+    #
     # @since 0.1.0
     attr_reader :path, :format, :version, :root
 

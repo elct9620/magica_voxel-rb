@@ -8,7 +8,7 @@ module MagicaVoxel
     class << self
       # Open IO stream
       #
-      # @param [IO|String] the stream to read
+      # @param io [IO|String] the stream to read
       #
       # @since 0.1.0
       def open(io)
@@ -17,7 +17,7 @@ module MagicaVoxel
         io.close
       end
     end
-    # @param [IO] the stream to read
+    # @param io [IO] the stream to read
     #
     # @since 0.1.0
     def initialize(io)
@@ -44,7 +44,7 @@ module MagicaVoxel
 
     # Read Dictionary
     #
-    # @return [Hash]
+    # @return [Hash{String => String}]
     #
     # @since 0.1.0
     def dict

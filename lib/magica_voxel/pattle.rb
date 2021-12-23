@@ -12,7 +12,7 @@ module MagicaVoxel
     #
     # @param id [Number]
     #
-    # @return [MagicVoxel::Color]
+    # @return [MagicaVoxel::Color]
     #
     # @since 0.1.0
     def [](id)

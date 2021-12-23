@@ -8,9 +8,9 @@ module MagicaVoxel
     class << self
       # Read Chunk
       #
-      # @param data [IO] the stream to read
+      # @param io [IO] the stream to read
       #
-      # @return [Enumerator<Chunk>] the chunk object
+      # @return [Enumerator<MagicaVoxel::Chunk>] the chunk object
       #
       # @since 0.1.0
       def read(io)
@@ -27,9 +27,9 @@ module MagicaVoxel
 
       # Read Chunk Header
       #
-      # @param data [IO] the stream to read
+      # @param io [IO] the stream to read
       #
-      # @return [Array<String|Number>] type, content bytes, children bytes
+      # @return [Array<String, Number>] type, content bytes, children bytes
       #
       # @since 0.1.0
       def header(io)
@@ -88,7 +88,7 @@ module MagicaVoxel
     #
     # @return [Hash] the field name and types
     #
-    # @sicne 0.1.0
+    # @since 0.1.0
     def layout
       {}
     end

@@ -19,7 +19,7 @@ module MagicaVoxel
 
     # Focus
     #
-    # @return [MagicalVoxel::Vector3]
+    # @return [MagicaVoxel::Vector3]
     #
     # @since 0.3.0
     def focus
@@ -28,7 +28,7 @@ module MagicaVoxel
 
     # Angle
     #
-    # @return [MagicalVoxel::Vector3]
+    # @return [MagicaVoxel::Vector3]
     #
     # @since 0.3.0
     def angle

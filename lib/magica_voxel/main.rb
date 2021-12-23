@@ -5,7 +5,7 @@ module MagicaVoxel
   #
   # @since 0.1.0
   class Main < Chunk
-    # @return [Array<Array<MagicaVoxel::Size|MagicalVoxel::Model>>]
+    # @return [Array<Array<MagicaVoxel::Size, MagicaVoxel::Model>>]
     #
     # @since 0.1.0
     def models
