@@ -3,12 +3,6 @@
 RSpec.describe MagicaVoxel::XYZI do
   subject(:xyzi) { described_class.new("\x01\x00\x00\x00\x01\x02\x03\x01", '') }
 
-  describe '#size' do
-    subject { xyzi.size }
-
-    it { is_expected.to eq(1) }
-  end
-
   describe '#voxels' do
     subject { xyzi.voxels }
 

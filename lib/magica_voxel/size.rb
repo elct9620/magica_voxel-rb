@@ -5,32 +5,27 @@ module MagicaVoxel
   #
   # @since 0.1.0
   class Size < Chunk
-    # @return [Number] x
-    #
     # @since 0.1.0
-    def x
-      @x ||= @content[0, 4].unpack1('l')
-    end
-
-    # @return [Number] y
-    #
-    # @since 0.1.0
-    def y
-      @y ||= @content[4, 4].unpack1('l')
-    end
-
-    # @return [Number] z
-    #
-    # @since 0.1.0
-    def z
-      @z ||= @content[8, 4].unpack1('l')
-    end
+    attr_reader :x, :y, :z
 
     # :nodoc:
     #
     # @since 0.1.0
     def inspect
       "#<MagicaVoxel::Size x=#{x}, y=#{y}, z=#{z}>"
+    end
+
+    private
+
+    # :nodoc:
+    #
+    # @since 0.1.0
+    def layout
+      {
+        x: :int32,
+        y: :int32,
+        z: :int32
+      }
     end
   end
 end

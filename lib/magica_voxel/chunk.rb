@@ -58,8 +58,12 @@ module MagicaVoxel
     #
     # @since 0.1.0
     def initialize(content, children)
-      @content = content
       @children = Chunk.read(StringIO.new(children))
+      Reader.open(content) do |reader|
+        layout.each do |key, type|
+          instance_variable_set(:"@#{key}", reader.send(type))
+        end
+      end
     end
 
     # :nodoc:
@@ -67,6 +71,17 @@ module MagicaVoxel
     # @since 0.1.0
     def each(&block)
       @children.each(&block)
+    end
+
+    private
+
+    # The Chunk Layout
+    #
+    # @return [Hash] the field name and types
+    #
+    # @sicne 0.1.0
+    def layout
+      {}
     end
   end
 end
