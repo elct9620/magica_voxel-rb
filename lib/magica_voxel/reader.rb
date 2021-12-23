@@ -30,7 +30,7 @@ module MagicaVoxel
     #
     # @since 0.1.0
     def int32
-      @io.read(4).unpack1('L')
+      @io.read(4).unpack1('l')
     end
 
     # Read String
@@ -58,6 +58,15 @@ module MagicaVoxel
     # @since 0.1.0
     def int32_array
       Array.new(int32).map { int32 }
+    end
+
+    # Read String Array
+    #
+    # @return [Array<String>]
+    #
+    # @since 0.1.0
+    def string_array
+      Array.new(int32).map { string }
     end
 
     # Read Frames
