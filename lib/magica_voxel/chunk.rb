@@ -59,23 +59,14 @@ module MagicaVoxel
     # @since 0.1.0
     def initialize(content, children)
       @content = content
-      @_children = children
-    end
-
-    # @return [MagicaVoxel::Chunk] return children chunks
-    #
-    # @since 0.1.0
-    def children
-      @children ||= Chunk.read(StringIO.new(@_children)).to_a
+      @children = children
     end
 
     # :nodoc:
     #
     # @since 0.1.0
     def each(&block)
-      return enum_for(:each) unless defined?(yield)
-
-      children.each(&block)
+      Chunk.read(StringIO.new(@children), &block)
     end
   end
 end
