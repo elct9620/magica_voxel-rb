@@ -54,7 +54,8 @@ module MagicaVoxel
       'nTRN' => 'Transform',
       'nGRP' => 'Group',
       'MATL' => 'Material',
-      'LAYR' => 'Layer'
+      'LAYR' => 'Layer',
+      'rCAM' => 'Camera'
     }.freeze
 
     # @param content [String] content data
