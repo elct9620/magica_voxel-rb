@@ -23,27 +23,6 @@ RSpec.describe MagicaVoxel::Transform do
       "\x01\x00\x00\x000" \
   end
 
-  describe '#node_id' do
-    subject { transform.node_id }
-
-    it { is_expected.to eq(0) }
-  end
-
-  describe '#name' do
-    subject { transform.name }
-
-    it { is_expected.to eq('chr') }
-  end
-
-  describe '#hidden?' do
-    it { is_expected.not_to be_hidden }
-  end
-
-  describe '#inspect' do
-    subject { transform.inspect }
-
-    it { is_expected.to match(/node_id=0/) }
-    it { is_expected.to match(/name=chr/) }
-    it { is_expected.to match(/hidden=false/) }
-  end
+  let(:node) { transform }
+  it_behaves_like 'node'
 end

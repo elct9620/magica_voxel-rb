@@ -2,6 +2,8 @@
 
 require 'simplecov'
 
+Dir[Bundler.root.join('spec/support/**/*.rb')].sort.each { |support| require support }
+
 SimpleCov.start do
   load_profile 'test_frameworks'
 end
