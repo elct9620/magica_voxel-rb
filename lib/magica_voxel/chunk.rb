@@ -56,7 +56,8 @@ module MagicaVoxel
       'MATL' => 'Material',
       'LAYR' => 'Layer',
       'rCAM' => 'Camera',
-      'NOTE' => 'Note'
+      'NOTE' => 'Note',
+      'IMAP' => 'PattleMap'
     }.freeze
 
     # @param content [String] content data

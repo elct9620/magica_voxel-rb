@@ -15,6 +15,7 @@ require_relative 'magica_voxel/material'
 require_relative 'magica_voxel/layer'
 require_relative 'magica_voxel/camera'
 require_relative 'magica_voxel/note'
+require_relative 'magica_voxel/pattle_map'
 require_relative 'magica_voxel/file'
 
 # The MagicaVoxel file parser

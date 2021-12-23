@@ -97,6 +97,15 @@ module MagicaVoxel
       Color.new(r, g, b, a)
     end
 
+    # Read Pattle Index MAP
+    #
+    # @return [Array<Number>]
+    #
+    # @since 0.1.0
+    def imap
+      Array.new(256).map { int32 }
+    end
+
     # Read Voxels
     #
     # @return [Array<MagicaVoxel::Voxel>]
