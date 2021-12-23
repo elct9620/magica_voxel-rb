@@ -7,6 +7,7 @@ require_relative 'magica_voxel/main'
 require_relative 'magica_voxel/size'
 require_relative 'magica_voxel/model'
 require_relative 'magica_voxel/pattle'
+require_relative 'magica_voxel/transform'
 require_relative 'magica_voxel/file'
 
 # The MagicaVoxel file parser

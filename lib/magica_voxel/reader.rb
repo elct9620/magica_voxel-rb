@@ -33,6 +33,33 @@ module MagicaVoxel
       @io.read(4).unpack1('L')
     end
 
+    # Read String
+    #
+    # @return [String]
+    #
+    # @since 0.1.0
+    def string
+      @io.read(int32)
+    end
+
+    # Read Dictionary
+    #
+    # @return [Hash]
+    #
+    # @since 0.1.0
+    def dict
+      Hash[*Array.new(int32 * 2).map { string }]
+    end
+
+    # Read Frames
+    #
+    # @return [Array<MagicaVoxel::Frame>]
+    #
+    # @since 0.1.0
+    def frames
+      Array.new(int32).map { dict }
+    end
+
     # Read Pattle
     #
     # @return [Array<MagicaVoxel::Color]
