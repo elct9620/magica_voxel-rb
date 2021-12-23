@@ -8,6 +8,7 @@ require_relative 'magica_voxel/size'
 require_relative 'magica_voxel/model'
 require_relative 'magica_voxel/pattle'
 require_relative 'magica_voxel/transform'
+require_relative 'magica_voxel/frame'
 require_relative 'magica_voxel/file'
 
 # The MagicaVoxel file parser
@@ -23,4 +24,9 @@ module MagicaVoxel
   #
   # @since 0.1.0
   Color = Struct.new(:r, :g, :b, :a)
+
+  # The Vector3
+  #
+  # @since 0.1.0
+  Vector3 = Struct.new(:x, :y, :z)
 end

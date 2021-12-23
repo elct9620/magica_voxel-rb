@@ -57,7 +57,7 @@ module MagicaVoxel
     #
     # @since 0.1.0
     def frames
-      Array.new(int32).map { dict }
+      Array.new(int32).map { Frame.new(dict) }
     end
 
     # Read Pattle
