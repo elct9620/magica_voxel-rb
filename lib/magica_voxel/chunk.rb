@@ -59,14 +59,14 @@ module MagicaVoxel
     # @since 0.1.0
     def initialize(content, children)
       @content = content
-      @children = children
+      @children = Chunk.read(StringIO.new(children))
     end
 
     # :nodoc:
     #
     # @since 0.1.0
     def each(&block)
-      Chunk.read(StringIO.new(@children), &block)
+      @children.each(&block)
     end
   end
 end
