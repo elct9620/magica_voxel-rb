@@ -12,7 +12,7 @@ module MagicaVoxel
     #
     # @since 0.1.0
     def inspect
-      "#<MagicaVoxel::Group node_id=#{node_id}, name=#{name}, hidden=#{hidden?}>"
+      "#<MagicaVoxel::Group id=#{id}, name=#{name}, hidden=#{hidden?}>"
     end
 
     private
@@ -22,7 +22,7 @@ module MagicaVoxel
     # @since 0.1.0
     def layout
       {
-        node_id: :int32,
+        id: :int32,
         attributes: :dict,
         child_ids: :int32_array
       }

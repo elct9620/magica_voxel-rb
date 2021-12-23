@@ -2,6 +2,8 @@
 
 module MagicaVoxel
   # The Chunk type MATL
+  #
+  # @since 0.1.0
   class Material < Chunk
     # @since 0.1.0
     attr_reader :id, :properties

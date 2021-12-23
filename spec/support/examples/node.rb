@@ -2,7 +2,7 @@
 
 RSpec.shared_examples 'node' do
   describe '#node_id' do
-    subject { node.node_id }
+    subject { node.id }
 
     it { is_expected.to eq(0) }
   end
@@ -20,7 +20,7 @@ RSpec.shared_examples 'node' do
   describe '#inspect' do
     subject { node.inspect }
 
-    it { is_expected.to match(/node_id=0/) }
+    it { is_expected.to match(/id=0/) }
     it { is_expected.to match(/name=chr/) }
     it { is_expected.to match(/hidden=false/) }
   end

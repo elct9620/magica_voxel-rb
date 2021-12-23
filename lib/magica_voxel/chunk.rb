@@ -53,7 +53,8 @@ module MagicaVoxel
       'RGBA' => 'Pattle',
       'nTRN' => 'Transform',
       'nGRP' => 'Group',
-      'MATL' => 'Material'
+      'MATL' => 'Material',
+      'LAYR' => 'Layer'
     }.freeze
 
     # @param content [String] content data

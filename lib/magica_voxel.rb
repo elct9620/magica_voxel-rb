@@ -12,6 +12,7 @@ require_relative 'magica_voxel/transform'
 require_relative 'magica_voxel/frame'
 require_relative 'magica_voxel/group'
 require_relative 'magica_voxel/material'
+require_relative 'magica_voxel/layer'
 require_relative 'magica_voxel/file'
 
 # The MagicaVoxel file parser

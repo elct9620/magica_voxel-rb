@@ -6,7 +6,7 @@ module MagicaVoxel
   # @since 0.1.0
   class Node < Chunk
     # @since 0.1.0
-    attr_reader :node_id, :attributes
+    attr_reader :id, :attributes
 
     # @return [String] name
     #
