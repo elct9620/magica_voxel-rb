@@ -50,7 +50,7 @@ module MagicaVoxel
       'MAIN' => 'Main',
       'SIZE' => 'Size',
       'XYZI' => 'XYZI',
-      'RGBA' => 'RGBA'
+      'RGBA' => 'Pattle'
     }.freeze
 
     # @param content [String] content data

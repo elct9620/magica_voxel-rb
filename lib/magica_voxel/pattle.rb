@@ -4,9 +4,20 @@ module MagicaVoxel
   # The Chunk type RGBA
   #
   # @since 0.1.0
-  class RGBA < Chunk
+  class Pattle < Chunk
     # @since 0.1.0
     attr_reader :pattle
+
+    # Get color by index
+    #
+    # @param id [Number]
+    #
+    # @return [MagicVoxel::Color]
+    #
+    # @since 0.1.0
+    def [](id)
+      @pattle[id]
+    end
 
     # :nodoc
     #
