@@ -55,6 +55,7 @@ module MagicaVoxel
       'nGRP' => 'Group',
       'MATL' => 'Material',
       'LAYR' => 'Layer',
+      'rOBJ' => 'Object',
       'rCAM' => 'Camera',
       'NOTE' => 'Note',
       'IMAP' => 'PattleMap'
